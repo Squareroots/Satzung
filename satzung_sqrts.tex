@@ -13,6 +13,11 @@
 % Allow us to reuse title info later (i.e., reuse the date as \MyDate)
 \usepackage{authoraftertitle}
 
+\addto\extrasngerman{%  
+	\def\sectionautorefname{}
+	\def\itemautorefname{Abschnitt}
+} 
+
 \begin{document}
 
 \title{\includegraphics[width=0.3\textwidth]{sqrts}\\[1cm]Squareroots}
@@ -71,7 +76,7 @@
 \item Alle Inhaber von Vereinsämtern sind unendgeltlich tätig.
 \end{enumerate}
 
-\section{Erwerb der Mitgliedschaft}
+\section{Erwerb der Mitgliedschaft}\label{sec:Mitgliedschaft}
 \begin{enumerate}
 \item Die Mitgliedschaft ist möglich als: 
 \begin{enumerate}
@@ -83,7 +88,7 @@
 % Minderjährige Mitglieder sind nur beschränkt geschäftsfähig, daher der Satz mit den Eltern
 \item Aktives Mitglied kann jede natürliche Person werden. 
 % Bemerkung: Beispiel: Person reist für Jahr in Ausland und möchte in der Zeit nicht Beiträge zahlen. Bedeutet für uns, dass wir passive Mitglieder für MVs auch nicht einladen müssen. Nur natürliche Personen erlaubt, da Firmen und Co ja Fördermitglieder sein würden
-\item Ein passives Mitglied ist eine natürliche Person mit ruhender Mitgliedschaft. Dieses Mitglied hat keinerlei Anspruch auf Vereinsleistungen. Zudem besteht kein Stimmrecht bei Mitgliederversammlungen.
+\item Ein passives Mitglied ist eine natürliche Person mit ruhender Mitgliedschaft. Dieses Mitglied hat keinerlei Anspruch auf Vereinsleistungen. Zudem besteht kein Stimmrecht bei Mitgliederversammlungen.\label{itm:passivMitglied}
 \item Fördermitglied kann jede juristische oder natürliche Person sein. Mit der Fördermitgliedschaft ist kein Stimmrecht verbunden.
 % Bemerkung: Idee (siehe auch Wikipedia): Wenn Leute wie Matthias geehrt werden sollen, die das Team gegründet haben. Ist einfach nur Symbolische Ehrung ohne Rechte und Pflichten
 \item 
@@ -91,6 +96,7 @@ Personen, die sich um den Verein besonders verdient gemacht haben, können auf V
 Ehrenmitglied kann jede natürliche Person sein. Mit der Ehrenmitgliedschaft ist kein Stimmrecht verbunden.
 \item Über den Antrag auf Aufnahme in den Verein entscheidet der Vorstand. Eine Ablehnung des Aufnahmeantrages ist ohne Angabe von Gründen möglich. Gegen die Entscheidung kann die Mitgliederversammlung angerufen werden.
 \item Die Mitgliedschaft beginnt nach positivem Aufnahmebescheid mit dem Eingang des Aufnahmebeitrages und des ersten Mitgliedsbeitrages. Es ist ein schriftlicher Aufnahmeantrag an den Verein zu richten.
+% Schriftform = Auf Papier!
 \item Bei Minderjährigen ist die Zustimmung des gesetzlichen Vertreters erforderlich.
 \end{enumerate}
 
@@ -98,6 +104,7 @@ Ehrenmitglied kann jede natürliche Person sein. Mit der Ehrenmitgliedschaft ist
 \begin{enumerate}
 \item Die Mitgliedschaft endet durch Austritt, Ausschluss, Tod der natürlichen Person bzw. Auflösung der juristischen Person.
 \item Der Austritt eines Mitgliedes ist mit einer Kündigungsfrist von 2 Monaten zum Quartalsende möglich. Er erfolgt durch schriftliche Erklärung gegenüber dem Vorstand.
+% auch hier gilt: schriftlich = Papierform!
 \item Aus dem Verein kann durch den Vorstand mit einfacher Mehrheit, mit sofortiger Wirkung ausgeschlossen werden: 
 \begin{enumerate}
 \item wer gegen die Ziele und Interessen des Vereins grob fahrlässig oder vorsätzlich verstoßen hat. 
@@ -108,11 +115,11 @@ Ehrenmitglied kann jede natürliche Person sein. Mit der Ehrenmitgliedschaft ist
 \end{enumerate}
 % Bemerkung: Das hier gilt vor dem Beschluss und soll dem Mitglied Möglichkeit geben, um den Vorfall zu erklären und somit ggf. den Vorstand umzustimmen
 \item Dem Mitglied muss vor der Beschlussfassung Gelegenheit zur Rechtfertigung bzw. Stellungnahme gegeben werden. Hierzu ist das Mitglied unter Einhaltung einer Mindestfrist von zehn Tagen schriftlich aufzufordern.
-% Bemerkung: Wenn der Vorstand trotzdem den Ausschluss für notwendig hält, kann das Mitglied Wiederspruch einlegen, um die MV entscheiden zu lassen. Ansonsten fliegt es direkt raus
-\item Gegen den Ausschließungsbeschluss kann innerhalb einer Frist von zwei Wochen nach Mitteilung des Ausschlusses schriftlich Widerspruch beim Vorstand eingelegt werden, über den die nächste ordentliche oder außerordentliche Mitgliederversammlung mit absoluter Mehrheit entscheidet. Bis zur Entscheidung der Mitgliederversammlung ist die Mitgliedschaft des betreffenden Mitgliedes nach §4 Absatz 3 eine passive Mitgliedschaft.
-%TODO: Querverweis auf passive Mitgliedschaft
+% Bemerkung: Wenn der Vorstand trotzdem den Ausschluss für notwendig hält, kann das Mitglied Widerspruch einlegen, um die MV entscheiden zu lassen. Ansonsten fliegt es direkt raus
+% schriftlich = Auf Papier mit Einschreiben
+\item Gegen den Ausschließungsbeschluss kann innerhalb einer Frist von zwei Wochen nach Mitteilung des Ausschlusses schriftlich Widerspruch beim Vorstand eingelegt werden, über den die nächste ordentliche oder außerordentliche Mitgliederversammlung mit absoluter Mehrheit entscheidet. Bis zur Entscheidung der Mitgliederversammlung ist die Mitgliedschaft des betreffenden Mitgliedes nach \autoref*{sec:Mitgliedschaft} \autoref{itm:passivMitglied} eine passive Mitgliedschaft.
 \item Bei Beendigung der Mitgliedschaft, gleich aus welchem Grund, erlöschen alle Ansprüche aus dem Mitgliedschaftsverhältnis. Noch ausstehende Verpflichtungen aus dem Mitgliedschaftsverhältnis, insbesondere ausstehende Beitragspflichten, bleiben hiervon unberührt. Vereinseigene Gegenstände sind dem Verein herauszugeben. 
-% Kommentar: GGf. folgenden Satz (nach CHeck der Beitragsordnung) streichen
+% Kommentar: GGf. folgenden Satz (nach Check der Beitragsordnung) streichen
 Dem austretenden Mitglied steht kein Anspruch auf Rückzahlung überzahlter Beiträge zu.
 \end{enumerate}
 
@@ -120,10 +127,10 @@ Dem austretenden Mitglied steht kein Anspruch auf Rückzahlung überzahlter Beit
 \begin{enumerate}
 % Bemerkung: Umlagen => z.B. wenn wir uns was teueres kaufen wollen, was unser aktuelles Budget übersteigt und die Kosten daher auf alle Mitglieder verteilen.
 % Gebühren für besondere Leistungen => z.B. Hotel/Bahnbuchungen für einige Mitglieder (die über die Gebühren letztendlich selbst bezahlen müssen), um Gruppenrabatte nutzen zu können
-% TODO: Umlagengeschichte und die Frage nach Bezahlung im Voraus muss in die Beitragsordnung
 \item Der Verein erhebt einen Aufnahmebeitrag und einen regelmäßigen Mitgliedsbeitrag. Es können zusätzlich Umlagen, Gebühren für besondere Leistungen des Vereins erhoben werden.
 \item Für die Regelung der Beiträge, Umlagen und Gebühren beschließt die Mitgliederversammlung eine Beitragsordnung.
 % In Beitragsordnung: Das Mitglied ist verpflichtet, dem Verein Änderungen der Bankverbindung, der Anschrift sowie der Mailadresse mitzuteilen.
+\todo{Die Umlagen-geschichte und die Frage nach Bezahlung im Voraus muss in die Beitragsordnung}
 \end{enumerate}
 
 \section{Pflichten}
@@ -140,7 +147,6 @@ Dem austretenden Mitglied steht kein Anspruch auf Rückzahlung überzahlter Beit
 \end{enumerate}
 \end{enumerate}
 
-% TODO: Innerhalb des Vorstands einigen
 \section{Der Vorstand}
 \begin{enumerate}
 \item Der Vorstand besteht aus:
@@ -149,63 +155,103 @@ Dem austretenden Mitglied steht kein Anspruch auf Rückzahlung überzahlter Beit
 \item einem Stellvertreter
 \item einem Kassenwart
 \end{enumerate}
-% TODO: Stean fragt beim C3MA nach, was es mit "allein vertretungsberechtigt" auf sich hat (war das ein Requirement für Banking?). Sh4dow fragt bei Bank nach, ob das ein Requirement ist
-\item Er vertritt den Verein gerichtlich und außergerichtlich. Jedes Vorstandsmitglied ist allein vertretungsberechtigt.
+\item Jedes Vorstandsmitglied ist allein vertretungsberechtigt. Im Innenverhältnis ist vor jeder gegenüber Dritten abzugebenden Rechtshandlung ein Vorstandsbeschluss zu erlassen.
+% Sh4dow hat bei Bank nachgefragt: "Jedes Vorstandsmitglied ist allein vertretungsberechtigt" -> Dieser Satz spielt vor allem bezgl. Online-Banking eine Rolle -> sonst müssen für jede Überweisung stets 2 Vorstandsmitglieder zustimmen bzw. ggf. sogar vor Ort sein
+% Der letzte Satz beschränkt den Handlungsspielraum des vorherigen Satzes wiederum, so dass potentielle "Alleingänge" eingeschränkt werden.
+% Durch das BGB §26 ist außerdem abgedeckt: "Er vertritt den Verein gerichtlich und außergerichtlich"
 \item Der Vorstand wird von der Mitgliederversammlung für die Dauer von zwei Jahren gewählt. Die Wiederwahl der Vorstandsmitglieder ist möglich.
-\item Der Vorsitzende wird von der Mitgliederversammlung in einem besonderen Wahlgang bestimmt. Die jeweils amtierenden Vorstandsmitglieder bleiben nach Ablauf ihrer Amtszeit im Amt, bis Nachfolger gewählt sind.
-\item Dem Vorstand obliegt die Führung der laufenden Geschäfte des Vereins. Er hat insbesondere folgende Aufgaben:
-\begin{enumerate}
-\item Der Vorstand kann für die Geschäfte der laufenden Verwaltung einen Geschäftsführer bestellen. Dieser ist berechtigt, an den Sitzungen des Vorstandes mit beratender Stimme teilzunehmen.
-\item Der Vorstand fasst seine Beschlüsse mit einfacher Mehrheit.
-\end{enumerate}
-\item Beschlüsse des Vorstands können bei Eilbedürftigkeit auch schriftlich oder fernmündlich gefasst werden, wenn alle Vorstandsmitglieder ihre Zustimmung zu diesem Verfahren schriftlich oder fernmündlich erklären. Schriftlich oder fernmündlich gefasste Vorstandsbeschlüsse sind schriftlich niederzulegen und von allen Vorstandsmitgliedern zu unterzeichnen.
+\item Die Mitglieder des Vorstands sind grundsätzlich ehrenamtlich tätig.
+\item Die jeweils amtierenden Vorstandsmitglieder bleiben nach Ablauf ihrer Amtszeit im Amt, bis Nachfolger gewählt sind.
+\item Vorstandsmitglied kann nur werden, wer mindestens ein Jahr Vereinsmitglied ist.
+% Haben wir uns überlegt, weil ein Vorstandsmitglied mit den Gegebenheiten und der Mentalität im Verein vertraut sein sollte
+\item Mit der Beendigung der Vereinsmitgliedschaft endet auch die Mitgliedschaft im Vereinsvorstand. Scheidet ein Mitglied des Vorstands vorzeitig aus, so ist binnen eines
+Monats eine außerordentliche Mitgliederversammlung einzuberufen.
 \item Ein Vorstandsmitglied ist nicht berechtigt ein anderes Vorstandsmitglied in Vorstandssitzungen zu vertreten.
 \end{enumerate}
 
 \section{Zuständigkeiten des Vorstands}
 \begin{enumerate}
-\item Der Vorstand führt die Geschäfte des Vereins und fasst die erforderlichen Beschlüsse.
+\item Der Vorstand führt die Geschäfte des Vereins und fasst die erforderlichen Beschlüsse. Er hat insbesondere folgende Aufgaben:
+\begin{enumerate}
+\item Der Vorstand kann für die Geschäfte der laufenden Verwaltung einen Geschäftsführer bestellen. Dieser ist berechtigt, an den Sitzungen des Vorstandes mit beratender Stimme teilzunehmen.
+\item Der Vorstand fasst seine Beschlüsse mit einfacher Mehrheit.
+\end{enumerate}
+% Haben wir jetzt nicht aufgenommen, da auch in Satzung von C3MA und RZL nicht drinnen, dafür aber in anderen Mustern:
+% * die Führung der Bücher sowie die Erstellung des Jahresabschlusses
+% * die Ausführung von Beschlüssen der Mitgliederversammlung, 
+% * die Verwaltung des Vereinsvermögens und die Anfertigung des Jahresberichts
+% * die Aufnahme neuer Mitglieder
 \item Er ist zu rechtsgeschäftlichen Verpflichtungen zu Lasten des Vereins bis zu einer Höhe von EUR 313,37 ermächtigt. Diese Bestimmung betrifft das Innenverhältnis. Verpflichtungen, welche die Höhe von EUR 313,37 übersteigen, müssen vom Vorstand einstimmig genehmigt und beschlossen werden.
-\item In dringenden, keinen Aufschub duldenden Dingen kann der Vorstand mit der Zustimmung aller Vorstandsmitglieder über diese Befugnisse hinaus handeln. Diese Bestimmung betrifft das Innenverhältnis. Er ist verpflichtet die Mitglieder hierüber unverzüglich zu informieren.
-\item Der Vorstand gibt sich eine Geschäftsordnung. Diese ist den Mitgliedern innerhalb einer Woche schriftlich oder per E-Mail zur Verfügung zu stellen.
+% Andererseits muss sich der Vorstand natürlich spätestens bei der MV für seine Ausgaben rechtfertigen, wobei die Mitglieder den Vorstand entlasten oder nicht können.
+\item In dringenden, keinen Aufschub duldenden Dingen kann der Vorstand mit der Zustimmung aller Vorstandsmitglieder über diese Befugnisse hinaus handeln. Diese Bestimmung betrifft das Innenverhältnis. Er ist verpflichtet die Mitglieder hierüber unverzüglich in Textform zu informieren.
+% in Textform => auch elektronisch wie E-Mail ist erlaubt. Es muss allerdings dauerhaft sein, womit z.B. Slack wegfällt. Genauere Rechtsform:
+% # Die Textform und E-Mails
+% Anders ist das bei der – deutlich weniger bekannten – Textform. Für diese Form genügt gem. § 126b BGB auch eine andere dauerhafte Wiedergabe in Schriftzeichen. Es muss auch keine eigenhändige Unterschrift vorliegen; es genügt, wenn der Name genannt und irgendwie deutlich wird, wo die Erklärung endet. Diese Anforderungen lassen sich durch eine E-Mail erfüllen. Die Textform wird jedoch im Gesetz nur an wenigen Stellen für ausreichend gehalten. Immerhin die Information des Kunden bei Verbraucherverträgen oder der Widerruf des Verbrauchers bei einem Internetgeschäft können in Textform – also per E-Mail – erfolgen.
+\item Der Vorstand kann sich eine Geschäftsordnung geben, in der u.a. die Aufgabenbereiche der einzelnen Vorstandsmitglieder festgelegt werden.
+\item Die Beschlüsse des Vorstands sind zu protokollieren
 \end{enumerate}
 
 \section{Mitgliederversammlung}
 \begin{enumerate}
 \item Die Mitgliederversammlung ist einmal jährlich einzuberufen.
-\item Eine außerordentliche Mitgliederversammlung ist einzuberufen, wenn es das Vereinsinteresse erfordert oder wenn die Einberufung von mindestens 20\% der Vereinsmitglieder schriftlich und unter Angabe des Zweckes und der Gründe verlangt wird.
-\item Die Einberufung der Mitgliederversammlung erfolgt schriftlich oder in elektronischer Form durch den Vorstand unter Wahrung einer Einladungsfrist von mindestens zwei Wochen bei gleichzeitiger Bekanntgabe der Tagesordnung. Die Frist beginnt mit dem auf die Absendung des Einladungsschreibens folgenden Tag. Das Einladungsschreiben gilt dem Mitglied als zugegangen, wenn es an die letzte vom Mitglied des Vereins schriftlich bekannt gegebene Adresse gerichtet ist.
+\item Eine außerordentliche Mitgliederversammlung ist einzuberufen, wenn es das Vereinsinteresse erfordert oder wenn die Einberufung von mindestens 20\% der Vereinsmitglieder in Textform und unter Angabe des Zweckes und der Gründe verlangt wird.
+% auch hier gilt: Textform = E-Mail oder andere dauerhafte Wiedergabe in Schriftzeichen
+% Wir (der Vorstand) versuchen es hier den potentiellen 20% einfach zu ermöglichen.... 
+% Vorstand kann auch in den 20% der anfragenden Mitglieder enthalten sein
+\item Die Einberufung der Mitgliederversammlung erfolgt in Textform durch den Vorstand unter Wahrung einer Einladungsfrist von mindestens zwei Wochen bei gleichzeitiger Bekanntgabe der Tagesordnung. Die Frist beginnt mit dem auf die Absendung des Einladungsschreibens folgenden Tag. Das Einladungsschreiben gilt dem Mitglied auch als zugegangen, wenn es an die letzten vom Mitglied des Vereins bekannt gegebenen Kontaktdaten gerichtet ist.
+% auch hier gilt: Textform = E-Mail oder andere dauerhafte Wiedergabe in Schriftzeichen
+% Kontaktdaten = letzte bekannte E-Mailadresse oder Handynummer (SMS)
 \item Jedes stimmberechtigte Vereinsmitglied hat das gleiche Stimmgewicht.
 \item Stimmberechtigt ist jedes anwesende, aktive Mitglied.
 \item Über die Beschlüsse der Mitgliederversammlung ist Protokoll zu führen, das vom Versammlungsleiter zu unterzeichnen ist.
-\item Die Mitgliederversammlung als das oberste beschlussfassende Vereinsorgan ist grundsätzlich für alle Aufgaben zuständig, sofern bestimmte Aufgaben gemäß dieser Satzung nicht einem anderen Vereinsorgan übertragen wurden. Ihr sind insbesondere die Jahresrechnung und der Jahresbericht zur Beschlussfassung über die Genehmigung und die Entlastung des Vorstandes schriftlich vorzulegen. Die Mitgliederversammlung entscheidet z. B. auch über
+\item Die Mitgliederversammlung als das oberste beschlussfassende Vereinsorgan ist grundsätzlich für alle Aufgaben zuständig, sofern bestimmte Aufgaben gemäß dieser Satzung nicht einem anderen Vereinsorgan übertragen wurden. Ihr sind insbesondere die Jahresrechnung und der Jahresbericht zur Beschlussfassung über die Genehmigung und die Entlastung des Vorstandes schriftlich vorzulegen.
+\item Die Mitgliederversammlung entscheidet z. B. auch über
+% "entscheidet z.B. auch" => optional
 \begin{enumerate}
-\item Gebührenbefreiungen,
-\item Aufgaben des Vereins,
+\item Höhe und Fälligkeit von Beiträgen und Umlagen,
 \item Aufnahme von Darlehen ab EUR 313,37
-\item Genehmigung aller Geschäftsordnungen für den Vereinsbereich,
+\item Wahl und Abberufung von Vorstandsmitgliedern,
+\item Wahl der Kassenprüfer,
+% Ernennung von Fördermitgliedern
 \item Satzungsänderungen,
 \item Auflösung des Vereins.
 \end{enumerate}
-Die Mitgliederversammlung ist nicht berechtigt über 
-\begin{enumerate}
-\item die Abschaffung der Beitragsordnung,
-\item \todo{Rechte der Mitgliederversammlung}\dots{} zu entscheiden.
-\end{enumerate}
 \item Eine Vertretung eines abwesenden Mitglieds durch ein anderes ist möglich, wenn die Vertretungsbefugnis in Textform nachgewiesen wird. Jedes anwesende Mitglied kann höchstens zwei abwesende Mitglieder vertreten.
+% Wir haben uns explizit auf Textform anstelle schriftlicher Form geeinigt, um die Latte niedrig anzusetzen
+% Ein abwesendes Mitglied kann ja im Nachhinein immer noch widersprechen
 \item Jede satzungsmäßig einberufene Mitgliederversammlung wird als beschlussfähig anerkannt ohne Rücksicht auf die Zahl der erschienenen Vereinsmitglieder.
 \item Die Mitgliederversammlung fasst ihre Beschlüsse mit einfacher Mehrheit. Bei Stimmengleichheit gilt ein Antrag als abgelehnt.
+% Es hängt davon ab, wie der Antrag formuliert ist -> Wenn man einen Antrag stellt, dass etwas .....
 \end{enumerate}
 
 \section{Beurkundung von Beschlüssen}
+% Wir haben uns entschieden das nicht in die Geschäftsordnung auszulagern, sondern in die Satzung zu tun um vorsätzliche Dokumentationslücken (Beispielszenario: Vorgaben vor Abstimmung kurz ändern, dann abstimmen und hinterher wieder zurückändern) auszuschließen. Also damit eventuelle Änderungen sauber dokumentiert sind und nicht einfach mal eben (z.B. bei Geschäftsordnung des Vorstandes - die ja eh optional ist - durch Vorstand) geändert werden können.
 \begin{enumerate}
-\item Die in Vorstandssitzungen und in Mitgliederversammlungen erfassten Beschlüsse sind schriftlich niederzulegen und vom Vorstand zu unterzeichnen.
+\item Die in Vorstandssitzungen erfassten Beschlüsse sind schriftlich niederzulegen und vom Vorstand zu unterzeichnen.
+% Vorstand = von allen Vorstandsmitgliedern
+\item Über die Beschlüsse der Mitgliederversammlung ist ein Protokoll aufzunehmen, das vom jeweiligen Versammlungsleiter und dem Protokollführer zu unterzeichnen ist. 
+\item Die Protokolle sollen folgende Feststellungen enthalten:
+\begin{enumerate}
+\item Ort und Zeit der Versammlung,
+\item die Tagesordnung,
+\item den Versammlungsleiter,
+\item den Protokollführer,
+\item die Zahl der erschienenen Mitglieder und der abgetretenen Stimmen,
+\item die einzelnen Abstimmungsergebnisse der TOPs inklusive der Art der Abstimmung.
+\end{enumerate}
 \end{enumerate}
 
 \section{Satzungsänderung}
 \begin{enumerate}
-\item Für Satzungsänderungen ist eine 3/4-Mehrheit der anwesenden, stimmberechtigten Vereinsmitglieder erforderlich. Stimmenthaltungen bleiben außer Betracht.
- Für Änderungen des Satzungszwecks ist eine Mehrheit von \todo{Definiere benötigte Mehrheit für Änderung von Satzungszweck}\dots{} der erschienenen Vereinsmitglieder erforderlich. Über Satzungsänderungen kann in der Mitgliederversammlung nur abgestimmt werden, wenn auf diesen Tagesordnungspunkt bereits in der Einladung zur Mitgliederversammlung hingewiesen wurde und der Einladung sowohl der bisherige als auch der vorgesehene neue Satzungstext beigefügt worden waren.
+\item Für Satzungsänderungen ist eine 3/4-Mehrheit der abgegebenen gültigen Stimmen erforderlich. Stimmenthaltungen bleiben außer Betracht.
+% "Stimmenthaltungen bleiben außer Betracht" => die 3/4 beziehen sich nur auf alle Nicht-Enthaltenen Stimmen, was dazu führen kann, dass 
+\item Für Änderungen des Vereinszwecks gilt eine Einladungsfrist von mind. 4 Wochen. Es ist eine Mehrheit von neun zehnteln der stimmberechtigten Vereinsmitglieder erforderlich. In diesem Fall ist auch eine Abstimmung in Schriftform bis zum Vortag um 18:00 Uhr möglich. 
+% Just because :P
+% Bei Änderung des Vereinszwecks: Hier bezieht sich die Mehrheitsangabe explizit nicht auf alle anwesenden. Stattdessen müssen wirklich mind. 90% erscheinen und zustimmen oder sich zumindest vertreten lassen (sei es durch ein anderes Mitglied?? -> ) bzw. durch einen Brief, der bis zum Vortrag um 18:00 Uhr (beim Vorstand?) eingegangen sein muss.
+% Eine Änderung des Vereinszwecks kommt so ziemlich einer Neugründung gleich. Bei einer Änderung des Vereinszwecks 
+% ------------------------------------------------------------------------------------ Ab hier geht's weiter ----------------------------------------------------------------------
+Über Satzungsänderungen kann in der Mitgliederversammlung nur abgestimmt werden, wenn auf diesen Tagesordnungspunkt bereits in der Einladung zur Mitgliederversammlung hingewiesen wurde und der Einladung sowohl der bisherige als auch der vorgesehene neue Satzungstext beigefügt worden waren.
+
 \item Satzungsänderungen, die von Aufsichts-, Gerichts- oder Finanzbehörden aus formalen Gründen verlangt werden, kann der Vorstand von sich aus vornehmen. Diese Satzungsänderungen müssen allen Vereinsmitgliedern zeitnah schriftlich mitgeteilt werden.
 \item Zusätzliche berechtigte Stimmen können durch die Übertragung der Stimme eines ordentlichen Mitglieds mittels einer Vollmacht auf ein teilnehmendes ordentliches Mitglied erfolgen. Ein teilnehmendes ordentliches Mitglied kann maximal zwei weitere Stimmen zusätzlich zur eigenen auf sich vereinen.
 \end{enumerate}
