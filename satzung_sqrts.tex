@@ -4,6 +4,9 @@
 \usepackage{babel}
 \usepackage{textcomp}
 \usepackage{graphicx}
+\usepackage{nameref}
+\usepackage{smartref}
+\addtoreflist{section}
 % Section numbering starts with $
 \renewcommand*\thesection{\S~\arabic{section}}
 % Hyperref allows us to have clickable links in the tables of content (i.e., our todo list)
@@ -13,16 +16,13 @@
 % Allow us to reuse title info later (i.e., reuse the date as \MyDate)
 \usepackage{authoraftertitle}
 
-\addto\extrasngerman{%  
-	\def\sectionautorefname{}
-	\def\itemautorefname{Abschnitt}
-} 
+\newcommand{\customref}[1]{\sectionref{#1}, Absatz \ref{#1}}
 
 \begin{document}
 
 \title{\includegraphics[width=0.3\textwidth]{sqrts}\\[1cm]Squareroots}
 \subtitle{Stealing your flags since 0x7d6}
-\date{\todo{Datum bestimmen}XX.XX.2018}
+\date{02.05.2019}
 \author{Vereinssatzung}
 
 \maketitle
@@ -73,10 +73,10 @@
 \item Mittel des Vereins dürfen nur für die satzungsmäßigen Zwecke verwendet werden. Die Mitglieder erhalten keine Gewinnanteile und in ihrer Eigenschaft als Mitglieder auch keine sonstigen Zuwendungen aus Mitteln des Vereins.
 % Bemerkung: Ein Mitglied kann z.B. nicht als Auslagenerstattung für ein Event 2000€ verlangen
 \item Es darf keine Person durch Ausgaben, die dem Zweck des Vereins fremd sind, oder durch unverhältnismäßig hohe Vergütungen begünstigt werden.
-\item Alle Inhaber von Vereinsämtern sind unendgeltlich tätig.
+\item Alle Inhaber von Vereinsämtern sind unentgeltlich tätig.
 \end{enumerate}
 
-\section{Erwerb der Mitgliedschaft}\label{sec:Mitgliedschaft}
+\section{Erwerb der Mitgliedschaft}
 \begin{enumerate}
 \item Die Mitgliedschaft ist möglich als: 
 \begin{enumerate}
@@ -88,7 +88,7 @@
 % Minderjährige Mitglieder sind nur beschränkt geschäftsfähig, daher der Satz mit den Eltern
 \item Aktives Mitglied kann jede natürliche Person werden. 
 % Bemerkung: Beispiel: Person reist für Jahr in Ausland und möchte in der Zeit nicht Beiträge zahlen. Bedeutet für uns, dass wir passive Mitglieder für MVs auch nicht einladen müssen. Nur natürliche Personen erlaubt, da Firmen und Co ja Fördermitglieder sein würden
-\item Ein passives Mitglied ist eine natürliche Person mit ruhender Mitgliedschaft. Dieses Mitglied hat keinerlei Anspruch auf Vereinsleistungen. Zudem besteht kein Stimmrecht bei Mitgliederversammlungen.\label{itm:passivMitglied}
+\item Ein passives Mitglied ist eine natürliche Person mit ruhender Mitgliedschaft. Dieses Mitglied hat keinerlei Anspruch auf Vereinsleistungen. Zudem besteht kein Stimmrecht bei Mitgliederversammlungen.\label{passive Mitgliedschaft}
 \item Fördermitglied kann jede juristische oder natürliche Person sein. Mit der Fördermitgliedschaft ist kein Stimmrecht verbunden.
 % Bemerkung: Idee (siehe auch Wikipedia): Wenn Leute wie Matthias geehrt werden sollen, die das Team gegründet haben. Ist einfach nur Symbolische Ehrung ohne Rechte und Pflichten
 \item 
@@ -117,7 +117,7 @@ Ehrenmitglied kann jede natürliche Person sein. Mit der Ehrenmitgliedschaft ist
 \item Dem Mitglied muss vor der Beschlussfassung Gelegenheit zur Rechtfertigung bzw. Stellungnahme gegeben werden. Hierzu ist das Mitglied unter Einhaltung einer Mindestfrist von zehn Tagen schriftlich aufzufordern.
 % Bemerkung: Wenn der Vorstand trotzdem den Ausschluss für notwendig hält, kann das Mitglied Widerspruch einlegen, um die MV entscheiden zu lassen. Ansonsten fliegt es direkt raus
 % schriftlich = Auf Papier mit Einschreiben
-\item Gegen den Ausschließungsbeschluss kann innerhalb einer Frist von zwei Wochen nach Mitteilung des Ausschlusses schriftlich Widerspruch beim Vorstand eingelegt werden, über den die nächste ordentliche oder außerordentliche Mitgliederversammlung mit absoluter Mehrheit entscheidet. Bis zur Entscheidung der Mitgliederversammlung ist die Mitgliedschaft des betreffenden Mitgliedes nach \autoref*{sec:Mitgliedschaft} \autoref{itm:passivMitglied} eine passive Mitgliedschaft.
+\item Gegen den Ausschließungsbeschluss kann innerhalb einer Frist von zwei Wochen nach Mitteilung des Ausschlusses schriftlich Widerspruch beim Vorstand eingelegt werden, über den die nächste ordentliche oder außerordentliche Mitgliederversammlung mit absoluter Mehrheit entscheidet. Bis zur Entscheidung der Mitgliederversammlung ist die Mitgliedschaft des betreffenden Mitgliedes nach \customref{passive Mitgliedschaft} eine passive Mitgliedschaft.
 \item Bei Beendigung der Mitgliedschaft, gleich aus welchem Grund, erlöschen alle Ansprüche aus dem Mitgliedschaftsverhältnis. Noch ausstehende Verpflichtungen aus dem Mitgliedschaftsverhältnis, insbesondere ausstehende Beitragspflichten, bleiben hiervon unberührt. Vereinseigene Gegenstände sind dem Verein herauszugeben. 
 % Kommentar: GGf. folgenden Satz (nach Check der Beitragsordnung) streichen
 Dem austretenden Mitglied steht kein Anspruch auf Rückzahlung überzahlter Beiträge zu.
@@ -128,9 +128,9 @@ Dem austretenden Mitglied steht kein Anspruch auf Rückzahlung überzahlter Beit
 % Bemerkung: Umlagen => z.B. wenn wir uns was teueres kaufen wollen, was unser aktuelles Budget übersteigt und die Kosten daher auf alle Mitglieder verteilen.
 % Gebühren für besondere Leistungen => z.B. Hotel/Bahnbuchungen für einige Mitglieder (die über die Gebühren letztendlich selbst bezahlen müssen), um Gruppenrabatte nutzen zu können
 \item Der Verein erhebt einen Aufnahmebeitrag und einen regelmäßigen Mitgliedsbeitrag. Es können zusätzlich Umlagen, Gebühren für besondere Leistungen des Vereins erhoben werden.
-\item Für die Regelung der Beiträge, Umlagen und Gebühren beschließt die Mitgliederversammlung eine Beitragsordnung.
+\item Für die Regelung der Beiträge, Umlagen und Gebühren beschließt die Mitgliederversammlung eine Beitragsordnung. \label{Beschluss einer Beitragsordnung}
 % In Beitragsordnung: Das Mitglied ist verpflichtet, dem Verein Änderungen der Bankverbindung, der Anschrift sowie der Mailadresse mitzuteilen.
-\todo{Die Umlagen-geschichte und die Frage nach Bezahlung im Voraus muss in die Beitragsordnung}
+\todo{Die Umlagen-Geschichte und die Frage nach Bezahlung im Voraus muss in die Beitragsordnung}
 \end{enumerate}
 
 \section{Pflichten}
@@ -186,7 +186,7 @@ Monats eine außerordentliche Mitgliederversammlung einzuberufen.
 \item In dringenden, keinen Aufschub duldenden Dingen kann der Vorstand mit der Zustimmung aller Vorstandsmitglieder über diese Befugnisse hinaus handeln. Diese Bestimmung betrifft das Innenverhältnis. Er ist verpflichtet die Mitglieder hierüber unverzüglich in Textform zu informieren.
 % in Textform => auch elektronisch wie E-Mail ist erlaubt. Es muss allerdings dauerhaft sein, womit z.B. Slack wegfällt. Genauere Rechtsform:
 % # Die Textform und E-Mails
-% Anders ist das bei der – deutlich weniger bekannten – Textform. Für diese Form genügt gem. § 126b BGB auch eine andere dauerhafte Wiedergabe in Schriftzeichen. Es muss auch keine eigenhändige Unterschrift vorliegen; es genügt, wenn der Name genannt und irgendwie deutlich wird, wo die Erklärung endet. Diese Anforderungen lassen sich durch eine E-Mail erfüllen. Die Textform wird jedoch im Gesetz nur an wenigen Stellen für ausreichend gehalten. Immerhin die Information des Kunden bei Verbraucherverträgen oder der Widerruf des Verbrauchers bei einem Internetgeschäft können in Textform – also per E-Mail – erfolgen.
+% Anders ist das bei der – deutlich weniger bekannten – Textform. Für diese Form genügt gem. § 126b BGB auch eine andere dauerhafte Wiedergabe in Schriftzeichen. Es muss auch keine eigenhändige Unterschrift vorliegen; es genügt, wenn der Name genannt und irgendwie deutlich wird, wo die Erklärung endet. Diese Anforderungen lassen sich durch eine E-Mail erfüllen. Die Textform wird jedoch im Gesetz nur an wenigen Stellen für ausreichend gehalten. Immerhin die Information des Kunden bei Verbraucherverträgen oder der Wiederruf des Verbrauchers bei einem Internetgeschäft können in Textform – also per E-Mail – erfolgen.
 \item Der Vorstand kann sich eine Geschäftsordnung geben, in der u.a. die Aufgabenbereiche der einzelnen Vorstandsmitglieder festgelegt werden.
 \item Die Beschlüsse des Vorstands sind zu protokollieren
 \end{enumerate}
@@ -225,7 +225,7 @@ Monats eine außerordentliche Mitgliederversammlung einzuberufen.
 \end{enumerate}
 
 \section{Beurkundung von Beschlüssen}
-% Wir haben uns entschieden das nicht in die Geschäftsordnung auszulagern, sondern in die Satzung zu tun um vorsätzliche Dokumentationslücken (Beispielszenario: Vorgaben vor Abstimmung kurz ändern, dann abstimmen und hinterher wieder zurückändern) auszuschließen. Also damit eventuelle Änderungen sauber dokumentiert sind und nicht einfach mal eben (z.B. bei Geschäftsordnung des Vorstandes - die ja eh optional ist - durch Vorstand) geändert werden können.
+% Wir haben uns entschieden das nicht in die Geschäftsordnung auszulagern, sondern in die Satzung zu tun um vorsätzliche Dokumentationslücken (Beispielszenario: Vorgaben vor Abstimmung kurz ändern, dann abstimmen und hinterher wieder zurück ändern) auszuschließen. Also damit eventuelle Änderungen sauber dokumentiert sind und nicht einfach mal eben (z.B. bei Geschäftsordnung des Vorstandes - die ja eh optional ist - durch Vorstand) geändert werden können.
 \begin{enumerate}
 \item Die in Vorstandssitzungen erfassten Beschlüsse sind schriftlich niederzulegen und vom Vorstand zu unterzeichnen.
 % Vorstand = von allen Vorstandsmitgliedern
@@ -245,61 +245,32 @@ Monats eine außerordentliche Mitgliederversammlung einzuberufen.
 \begin{enumerate}
 \item Für Satzungsänderungen ist eine 3/4-Mehrheit der abgegebenen gültigen Stimmen erforderlich. Stimmenthaltungen bleiben außer Betracht.
 % "Stimmenthaltungen bleiben außer Betracht" => die 3/4 beziehen sich nur auf alle Nicht-Enthaltenen Stimmen, was dazu führen kann, dass 
-\item Für Änderungen des Vereinszwecks gilt eine Einladungsfrist von mind. 4 Wochen. Es ist eine Mehrheit von neun zehnteln der stimmberechtigten Vereinsmitglieder erforderlich. In diesem Fall ist auch eine Abstimmung in Schriftform bis zum Vortag um 18:00 Uhr möglich. 
+\item Für Änderungen des Vereinszwecks gilt eine Einladungsfrist von mind. 4 Wochen. Es ist eine Mehrheit von neun zehnteln der stimmberechtigten Vereinsmitglieder erforderlich. Bei Verhinderung eines stimmberechtigten Mitgliedes kann dessen Stimmabgabe auch in Schriftform an die Vereinsanschrift bis zum Vortag um 18:00 Uhr erfolgen. In letzterem Fall gilt das Posteingangsdatum. 
 % Just because :P
-% Bei Änderung des Vereinszwecks: Hier bezieht sich die Mehrheitsangabe explizit nicht auf alle anwesenden. Stattdessen müssen wirklich mind. 90% erscheinen und zustimmen oder sich zumindest vertreten lassen (sei es durch ein anderes Mitglied?? -> ) bzw. durch einen Brief, der bis zum Vortrag um 18:00 Uhr (beim Vorstand?) eingegangen sein muss.
+% Bei Änderung des Vereinszwecks: Hier bezieht sich die Mehrheitsangabe explizit nicht auf alle anwesenden. Stattdessen müssen wirklich mind. 90% erscheinen und zustimmen oder sich zumindest vertreten lassen (sei es durch ein anderes Mitglied?? -> ) bzw. durch einen Brief, der bis zum Vortrag um 18:00 Uhr eingegangen sein muss.
 % Eine Änderung des Vereinszwecks kommt so ziemlich einer Neugründung gleich. Bei einer Änderung des Vereinszwecks 
-% ------------------------------------------------------------------------------------ Ab hier geht's weiter ----------------------------------------------------------------------
-Über Satzungsänderungen kann in der Mitgliederversammlung nur abgestimmt werden, wenn auf diesen Tagesordnungspunkt bereits in der Einladung zur Mitgliederversammlung hingewiesen wurde und der Einladung sowohl der bisherige als auch der vorgesehene neue Satzungstext beigefügt worden waren.
-
+\item Über Satzungsänderungen kann in der Mitgliederversammlung nur abgestimmt werden, wenn auf diesen Tagesordnungspunkt bereits in der Einladung zur Mitgliederversammlung hingewiesen wurde und der Einladung sowohl der bisherige als auch der vorgeschlagene neue Satzungstext beigefügt worden waren.
 \item Satzungsänderungen, die von Aufsichts-, Gerichts- oder Finanzbehörden aus formalen Gründen verlangt werden, kann der Vorstand von sich aus vornehmen. Diese Satzungsänderungen müssen allen Vereinsmitgliedern zeitnah schriftlich mitgeteilt werden.
-\item Zusätzliche berechtigte Stimmen können durch die Übertragung der Stimme eines ordentlichen Mitglieds mittels einer Vollmacht auf ein teilnehmendes ordentliches Mitglied erfolgen. Ein teilnehmendes ordentliches Mitglied kann maximal zwei weitere Stimmen zusätzlich zur eigenen auf sich vereinen.
 \end{enumerate}
 
 \section{Vereinsordnungen}
 \begin{enumerate}
 \item Soweit die Satzung nicht etwas Abweichendes regelt ist der geschäftsführende Vorstand ermächtigt durch Beschluss nachfolgende Ordnungen zu erlassen:
 \begin{enumerate}
-\item Beitragsordnung
 \item Finanzordnung
 \item Geschäftsordnung für den geschäftsführenden Vorstand und den Gesamtvorstand.
 \end{enumerate}
-\item Die Finanzordnung und die Geschäftsordnung sind nicht Bestandteil der Satzung.
+% (siehe hierzu auch \customref{Beschluss einer Beitragsordnung})
 \end{enumerate}
 
-\section{Haftung des Vereins}
-\begin{enumerate}
-\item Ehrenamtlich Tätige und Organ- oder Amtsträger, deren Vergütung 720,00
-€ im Jahr nicht übersteigt, haften für Schäden gegenüber den Mitgliedern
-und gegenüber dem Verein, die sie in Erfüllung ihrer ehrenamtlichen
-Tätigkeit verursachen, nur für Vorsatz und grobe Fahrlässigkeit.
-\item Der Verein haftet gegenüber den Mitgliedern im Innenverhältnis nicht für fahrlässig verursachte Schäden, die Mitglieder bei der Benutzung von Anlagen oder Einrichtungen des Vereins oder bei Vereinsveranstaltungen erleiden, soweit solche Schäden nicht durch Versicherungen des Vereins abgedeckt sind.
-\end{enumerate}
-
-\section{Datenschutz im Verein}
-\begin{enumerate}
-\item Zur Erfüllung der Zwecke und Aufgaben des Vereins werden unter Beachtung der gesetzlichen Vorgaben des Bundesdatenschutzgesetzes (BDSG) personenbezogene Daten über persönliche und sachliche Verhältnisse der Mitglieder im Verein genutzt, gespeichert, übermittelt und verändert.
-\item Jedes Vereinsmitglied hat das Recht auf:
-\begin{enumerate}
-\item Auskunft über die zu seiner Person gespeicherten Daten;
-\item Berichtigung über die zu seiner Person gespeicherten Daten, wenn sie unrichtig sind;
-\item Sperrung der zu seiner Person gespeicherten Daten, wenn sich bei behaupteten Fehlern weder deren Richtigkeit noch deren Unrichtigkeit feststellen lässt;
-\item Löschung der zu seiner Person gespeicherten Daten, wenn die Speicherung unzulässig war.
-\end{enumerate}
-\item Den Organen des Vereins, allen Mitarbeitern oder sonst für den Verein Tätigen ist es untersagt, personenbezogene Daten unbefugt zu anderen als dem jeweiligen zur Aufgabenerfüllung gehörenden Zweck zu verarbeiten, bekannt zu geben, Dritten zugänglich zu machen oder sonst zu nutzen. Diese Pflicht besteht auch über das Ausscheiden der oben genannten Personen aus dem Verein hinaus.
-\end{enumerate}
+% Haftung des Vereins
+% https://www.haufe.de/recht/weitere-rechtsgebiete/allg-zivilrecht/wann-haften-die-vereinsmitglieder-mit-ihrem-privatvermoegen_208_76852.html
 
 \section{Auflösung des Vereins und Vermögensbindung}
 \begin{enumerate}
-\item Die Auflösung des Vereins kann nur in einer zu diesem Zweck einberufenen Mitgliederversammlung beschlossen werden. Zur Auflösung des Vereins ist eine Mehrheit von zwei Drittel/drei Viertel/vier Fünftel der abgegebenen gültigen Stimmen erforderlich.
+\item Die Auflösung des Vereins kann nur in einer zu diesem Zweck einberufenen Mitgliederversammlung beschlossen werden. Zur Auflösung des Vereins ist eine Mehrheit von drei Viertel der abgegebenen gültigen Stimmen erforderlich.
 \item Sofern die Mitgliederversammlung nicht anderes beschließt, sind im Falle der Auflösung die Vorstandsmitglieder als die Liquidatoren des Vereins bestellt.
-\item Bei Auflösung des Vereins oder bei Wegfall steuerbegünstigter Zwecke fällt das Vermögen des Vereins:
-\begin{enumerate}
-\item an den/die/das \todo{Hier fehlt auch etwas}\dots{} (Bezeichnung einer juristischen Person des öffentlichen Rechts oder einer anderen steuerbegünstigten Körperschaft), der/die/das es unmittelbar und ausschließlich für gemeinnützige, mildtätige oder kirchliche Zwecke zu verwenden hat, oder
-\item an eine juristische Person des öffentlichen Rechts oder eine andere steuerbegünstigte Körperschaft zwecks Verwendung für \todo{Definiere gemeinnützigen Zweck}\dots{}
-(Angabe eines bestimmten gemeinnützigen Zwecks)
-\item in Teilen von 25 \% an den Vorstand, 25 \% an die noch aktiven Mitglieder und 50 \% an die Universität Mannheim. Reine Ehrenmitglieder und Fördermitglieder werden in dieser Aufteilung nicht als aktive Mitglieder betrachtet und sind somit von der Verteilung ausgeschlossen.
-\end{enumerate}
+\item Bei Auflösung des Vereins oder bei Wegfall steuerbegünstigter Zwecke fällt das Vermögen des Vereins an eine oder mehrere juristische Person(en) des öffentlichen Rechts oder andere steuerbegünstigte(n) Körperschaft(en), welche es unmittelbar und ausschließlich für gemeinnützige, mildtätige oder kirchliche Zwecke zu verwenden hat. Die Begünstigte(n) wird/werden von der Mitgliederversammlung bestimmt.
 \item Die Auflösung wird dem Vereinsregister durch den Vorstand mitgeteilt.
 \end{enumerate}
 
